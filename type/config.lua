@@ -1,0 +1,14 @@
+---@class Geometry  -- 定义 Config 类型
+---@field x number    -- command 是字符串类型
+---@field y number    -- command 是字符串类型
+---@field width number    -- command 是字符串类型
+---@field height number    -- command 是字符串类型
+
+---@class Config  -- 定义 Config 类型
+---@field command string    -- command 是字符串类型
+---@field sticky boolean    -- sticky 是布尔值
+---@field autoclose boolean -- autoclose 是布尔值
+---@field floating boolean  -- floating 是布尔值
+---@field geometry Geometry   -- reapply 是布尔值
+---@field reapply boolean   -- reapply 是布尔值
+---@field rule any
