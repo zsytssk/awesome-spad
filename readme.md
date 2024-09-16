@@ -7,7 +7,7 @@ Directly download this repository and then place it in your ~/.config/awesome/ f
 ```lua
 local scratchpad = require 'scratchpad'
 
--- Create spad
+-- Create spad, For this configuration, you can refer to https://blingcorp.github.io/bling/. However, only the following items are useful here.
 local spad = scratchpad.create {
   command = '', -- Run command
   rule = { instance = 'crx_cadlkienfkclaiaibeoongdcgmdikeeg' }, -- Match client
