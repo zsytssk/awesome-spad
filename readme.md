@@ -7,12 +7,12 @@ Directly download this repository and then place it in your ~/.config/awesome/ f
 ```lua
 local scratchpad = require 'scratchpad'
 
--- Create spad, For this configuration, you can refer to https://blingcorp.github.io/bling/. However, only the following items are useful here.
+-- Create spad, For this configuration, you can refer to https://blingcorp.github.io/bling/#/module/scratch. However, only the following items are useful here.
 local spad = scratchpad.create {
-  command = '', -- Run command
-  rule = { instance = 'crx_cadlkienfkclaiaibeoongdcgmdikeeg' }, -- Match client
-  geometry = { x = 560, y = 290, height = 500, width = 800 }, -- Position
-  floating = true,
+ command = "wezterm start --class spad",           -- How to spawn the scratchpad
+    rule = { instance = "spad" },                     -- The rule that the scratchpad will be searched by
+    floating = true,                                  -- Whether it should be floating (MUST BE TRUE FOR ANIMATIONS)
+    geometry = {x=360, y=90, height=900, width=1200}, -- The geometry in a floating state
 }
 
 -- Use spad

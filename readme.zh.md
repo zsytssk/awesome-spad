@@ -8,12 +8,12 @@
 ```lua
 local scratchpad = require 'scratchpad'
 
--- 创建spad, 这个配置你可以参考[bling](https://blingcorp.github.io/bling/)，但是只有下面几条在这里有用
+-- 创建spad, 这个配置你可以参考 https://blingcorp.github.io/bling/#/，但是只有下面几条在这里有用
 local spad = scratchpad.create {
-  command = '', -- 运行命令
-  rule = { instance = 'crx_cadlkienfkclaiaibeoongdcgmdikeeg' }, -- 匹配client
-  geometry = { x = 560, y = 290, height = 500, width = 800 }, -- 位置
-  floating = true,
+ command = "wezterm start --class spad",           -- How to spawn the scratchpad
+    rule = { instance = "spad" },                     -- The rule that the scratchpad will be searched by
+    floating = true,                                  -- Whether it should be floating (MUST BE TRUE FOR ANIMATIONS)
+    geometry = {x=360, y=90, height=900, width=1200}, -- The geometry in a floating state
 }
 
 -- 使用 spad
