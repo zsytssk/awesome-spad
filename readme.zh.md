@@ -8,7 +8,7 @@
 ```lua
 local scratchpad = require 'scratchpad'
 
--- 创建spad
+-- 创建spad, 这个配置你可以参考[bling](https://blingcorp.github.io/bling/)，但是只有下面几条在这里有用
 local spad = scratchpad.create {
   command = '', -- 运行命令
   rule = { instance = 'crx_cadlkienfkclaiaibeoongdcgmdikeeg' }, -- 匹配client
