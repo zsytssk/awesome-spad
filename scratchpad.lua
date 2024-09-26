@@ -81,13 +81,21 @@ function Scratchpad:bind_client(c)
     self:reset()
   end)
 
-  c:connect_signal('unfocus', function()
-    self:turn_off()
-  end)
+  local leave = false
+  local enterFn = function()
+    leave = false
+  end
+  local leaveFn = function()
+    leave = true
+    utils.set_timeout(function()
+      if leave then
+        self:turn_off()
+      end
+    end, 0.3)
+  end
 
-  c:connect_signal('mouse::leave', function()
-    self:turn_off()
-  end)
+  c:connect_signal('focus', enterFn)
+  c:connect_signal('unfocus', leaveFn)
 
   self:apply(c)
 end

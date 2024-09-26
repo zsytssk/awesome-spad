@@ -37,18 +37,36 @@ local hide_client = function(c)
   c.sticky = false
   c.hidden = true
   c.ontop = false
+  c.above = false
+  c:tags {}
 end
 
 local show_client = function(c)
   c.sticky = true
   c.hidden = false
   c.ontop = true
+  c.above = true
   client.focus = c
   c:raise()
+end
+
+local set_timeout = function(func, time)
+  if not (type(time) == 'number') then
+    time = 0
+  end
+
+  ---@diagnostic disable-next-line: undefined-global
+  local task = timer { timeout = time }
+  task:connect_signal('timeout', function()
+    func()
+    task:stop()
+  end)
+  task:start()
 end
 
 return {
   wait_client_open = wait_client_open,
   hide_client = hide_client,
   show_client = show_client,
+  set_timeout = set_timeout,
 }
