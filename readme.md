@@ -9,11 +9,12 @@ local scratchpad = require 'scratchpad'
 
 -- Create spad, For this configuration, you can refer to https://blingcorp.github.io/bling/#/module/scratch. However, only the following items are useful here.
 local spad = scratchpad.create {
- command = "wezterm start --class spad",           -- How to spawn the scratchpad
+    command = "wezterm start --class spad",           -- How to spawn the scratchpad
     rule = { instance = "spad" },                     -- The rule that the scratchpad will be searched by
     floating = true,                                  -- Whether it should be floating (MUST BE TRUE FOR ANIMATIONS)
     geometry = {x=360, y=90, height=900, width=1200}, -- The geometry in a floating state
 }
+
 
 -- Use spad
 spad.toggle()
